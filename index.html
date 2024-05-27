@@ -15,7 +15,14 @@
 
     <!-----/bootstrap-->
 
+    <!--mycss-->
+
+     <link rel="stylesheet" href="css/style.css" />
+
+    <!--/mycss-->
+
     <title>Preventivo</title>
+
   </head>
   <body>
     <header>
@@ -56,8 +63,8 @@
     </header>
 
     <!--Form Utente-->
-    <div class="container mt-4">
-      <main>
+    <div class="container-main">
+      <main class="container mt-4">
         <div class="row g-5">
           <div class="col-md-7 col-lg-8">
             <h2 class="mb-3">Richiesta Preventivo</h2>
@@ -114,8 +121,8 @@
                 </div>
 
                 <div class="col-12">
-                  <label for="country" class="form-label">Tipo di Lavoro</label>
-                  <select class="form-select" id="country" required="">
+                  <label for="work" class="form-label">Tipo di Lavoro</label>
+                  <select class="form-select" id="work" required="">
                     <option value="">Seleziona il tipo di lavoro</option>
                     <option>Backend Development</option>
                     <option>Frontend Development</option>
@@ -133,7 +140,7 @@
                   <textarea
                     type="text"
                     class="form-control"
-                    id="zip"
+                    id="textareaboot"
                     placeholder=""
                     required=""
                   ></textarea>
@@ -141,13 +148,13 @@
               </div>
 
               <div class="col-12 mb-3">
-                <label for="cc-name" class="form-label"
+                <label for="codProm" class="form-label"
                   >Codice Promozionale (opzionale)</label
                 >
                 <input
                   type="text"
                   class="form-control"
-                  id="cc-name"
+                  id="codProm"
                   placeholder=""
                   required=""
                 />
