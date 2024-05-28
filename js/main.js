@@ -1,4 +1,38 @@
 
+// Oggetto JavaScript con le opzioni
+const workOptions = [
+  { value: 'Backend Development', label: 'Backend Development' },
+  { value: 'Frontend Development', label: 'Frontend Development' },
+  { value: 'Project Analysis', label: 'Project Analysis' },
+];
+
+// Funzione per generare dinamicamente le opzioni della select
+function generateSelectOptions() {
+  const workSelect = document.getElementById('work');
+
+  // Cancella eventuali opzioni esistenti
+  workSelect.innerHTML = '';
+
+  // Aggiungi un'opzione predefinita
+  const defaultOption = document.createElement('option');
+  defaultOption.value = '';
+  defaultOption.textContent = 'Seleziona il tipo di lavoro';
+  defaultOption.selected = true;
+  defaultOption.disabled = true;
+  workSelect.appendChild(defaultOption);
+
+  // Crea e aggiungi le nuove opzioni
+  workOptions.forEach(option => {
+    const newOption = document.createElement('option');
+    newOption.value = option.value;
+    newOption.textContent = option.label;
+    workSelect.appendChild(newOption);
+  });
+}
+
+// Chiamare la funzione per generare le opzioni della select all'avvio
+generateSelectOptions();
+
 // Funzione per calcolare il prezzo finale
 function calculatePrice() {
   // Ottieni gli elementi del modulo
