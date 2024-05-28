@@ -1,11 +1,64 @@
 
 // Funzione per calcolare il prezzo finale
 function calculatePrice() {
+  // Ottieni gli elementi del modulo
+  const firstNameInput = document.getElementById("firstName");
+  const lastNameInput = document.getElementById("lastName");
+  const emailInput = document.getElementById("email");
+  const privacyCheck = document.getElementById("flexCheckDefault");
+  const workTypeElement = document.getElementById("work");
+
+  // Variabile per tenere traccia della validità del modulo
+  let isValid = true;
+
+  // Verifica il campo Nome
+  if (!firstNameInput.value.trim()) {
+    firstNameInput.classList.add("is-invalid");
+    isValid = false;
+  } else {
+    firstNameInput.classList.remove("is-invalid");
+  }
+
+  // Verifica il campo Cognome
+  if (!lastNameInput.value.trim()) {
+    lastNameInput.classList.add("is-invalid");
+    isValid = false;
+  } else {
+    lastNameInput.classList.remove("is-invalid");
+  }
+
+  // Verifica il campo Email
+  if (!emailInput.checkValidity()) {
+    emailInput.classList.add("is-invalid");
+    isValid = false;
+  } else {
+    emailInput.classList.remove("is-invalid");
+  }
+
+  // Verifica se il checkbox della privacy policy è selezionato
+  if (!privacyCheck.checked) {
+    privacyCheck.classList.add("is-invalid");
+    isValid = false;
+  } else {
+    privacyCheck.classList.remove("is-invalid");
+  }
+
+  // Verifica il campo Tipo di Lavoro
+  if (!workTypeElement.value) {
+    workTypeElement.classList.add("is-invalid");
+    isValid = false;
+  } else {
+    workTypeElement.classList.remove("is-invalid");
+  }
+
+  // Se il modulo non è valido, interrompe l'esecuzione
+  if (!isValid) {
+    return;
+  }
   // Definisci il numero di ore di lavoro per ogni progetto
   const hours = 10;
 
   // Ottieni il tipo di lavoro selezionato
-  const workTypeElement = document.getElementById("work");
   const workType = workTypeElement.value;
 
   // Definisci il prezzo orario per ogni tipo di lavoro
